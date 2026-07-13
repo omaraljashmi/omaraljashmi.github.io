@@ -1,0 +1,16 @@
+html { scroll-behavior: smooth; }
+body { text-rendering: optimizeLegibility; }
+.section-block, .toolkit, footer { content-visibility: auto; contain-intrinsic-size: 1px 760px; }
+.project-card[hidden] { display: none; }
+.modal-open { overflow: hidden; }
+.glass-panel { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+.project-card, .filter-bar button, .ambient-toggle, a { transition-duration: 180ms !important; }
+.ambient-layer, .data-orbit, .ambient-glow { will-change: transform; transform: translateZ(0); }
+@media (max-width: 760px) {
+  .glass-panel { backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+  .data-orbit { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
