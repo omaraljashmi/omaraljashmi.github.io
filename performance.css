@@ -27,6 +27,7 @@ body {
 .topbar { background: #091a2cf7; }
 .modal-backdrop { background: rgba(1, 7, 13, 0.92); animation: none; }
 .project-modal { animation: none; }
+.modal-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
 
 /* Avoid broad `transition: all` work and keep feedback immediate. */
 .project-card,
