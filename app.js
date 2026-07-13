@@ -17,11 +17,15 @@ const projects = {
     details: ["Compared race results, performance trends, and each driver's contribution to team success.", "Explored the relationship between driver performance and car development across the season.", "Translated a personal interest in Formula 1 into a structured analytical question."],
     stack: ["R", "RStudio", "Data visualization"]
   },
-  "Job Search OS": {
-    label: "Process optimization system", year: "2026", metric: "5", metricLabel: "connected workflows",
-    summary: "A structured job-search command center designed to make applications and follow-ups measurable.",
-    details: ["Connects application tracking, networking, weekly reviews, follow-ups, and reusable email templates.", "Uses dropdown controls and status logic to keep next actions visible.", "Turns a high-volume search process into an organized operating rhythm."],
-    stack: ["Excel", "Dashboards", "Workflow design"]
+  "Open Data Scientist": {
+    label: "Open-source data product", year: "2026", metric: "M1", metricLabel: "live milestone",
+    summary: "A local-first data assistant that turns CSV and Excel files into profiles, quality findings, statistics, and downloadable reports.",
+    details: ["Built a transparent profiling engine for missing values, duplicates, types, memory use, and dataset health scoring.", "Ships with CSV and Excel ingestion, automated tests, sample data, and a polished Streamlit interface.", "Runs without paid APIs and is publicly available under the MIT License."],
+    stack: ["Python", "Pandas", "Streamlit"],
+    links: {
+      demo: "https://open-data-scientist-omar.streamlit.app",
+      github: "https://github.com/omaraljashmi/open-data-scientist"
+    }
   }
 };
 
@@ -72,6 +76,7 @@ function openModal(project, source) {
     <div class="modal-metric"><strong>${project.metric}</strong><span>${escapeHtml(project.metricLabel)}</span></div>
     <div class="modal-detail-list">${project.details.map((detail, index) => `<div><span>0${index + 1}</span><p>${escapeHtml(detail)}</p></div>`).join("")}</div>
     <div class="tag-row modal-tags">${project.stack.map((item) => `<span>${escapeHtml(item)}</span>`).join("")}</div>
+    ${project.links ? `<div class="modal-actions"><a class="primary-button" href="${project.links.demo}" target="_blank" rel="noreferrer">Launch live demo ↗</a><a class="secondary-button" href="${project.links.github}" target="_blank" rel="noreferrer">View source ↗</a></div>` : ""}
   </section>`;
   modal.addEventListener("click", (event) => { if (event.target === modal) closeModal(); });
   modal.querySelector(".modal-close").addEventListener("click", closeModal);
